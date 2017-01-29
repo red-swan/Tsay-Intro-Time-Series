@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\"ma\" <- function(pri,n,plot=TRUE){\n# pri: price series of an asset (univariate)\n# n: window size\n#\nnob=length(pri)\nma1=pri\nrange=max(pri)-min(pri)\nif(nob > n){\npsum=sum(pri[1:(n-1)])\nma1[1:n]=psum/(n-1)\nfor (i in n:nob){\npsum=psum+pri[i]\nma1[i]=psum/n\npsum=psum-pri[i-n+1]\n}\n}\nif(plot){\npar(mfcol=c(1,1))\nplot(pri,type='l',xlab=\"time index\")\nlines(ma1,lty=2)\nloc=max(pri)-range/3\nlegend(n/2,loc,c(paste(\"n = \",c(n))),lty=2)\ntitle(main='Moving average plot')\n}\nma <- list(ma=ma1)\n}\n",
+    "created" : 1484625434786.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1737050119",
+    "id" : "26E4E068",
+    "lastKnownWriteTime" : 1484622663,
+    "last_content_update" : 1484622663,
+    "path" : "C:/Users/JDKS/Applications/Github/Tsay-An-Introduction-to-Analysis-of-Financial-Data-With-R/scripts/1-ma.R",
+    "project_path" : "scripts/1-ma.R",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

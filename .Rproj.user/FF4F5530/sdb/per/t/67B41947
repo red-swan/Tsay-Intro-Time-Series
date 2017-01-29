@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "# Author: Jared Swan\n\n# Function Declarations --------------------------------------------------------\n\n# installs a package (if necessary) and then loads it\nusePackage <- function(packages) {\n    usePackage <- function(p){\n        if (!is.element(p, installed.packages()[,1]))\n            install.packages(p, dep = TRUE)\n        require(p, character.only = TRUE)\n    }\n    for(package in packages) usePackage(package)\n}\n\n# clears all variables and reloads the setup script\nresetEnv <- function(){\n    rm(list = ls(pos = 1), pos = 1)\n    on.exit(source('scripts/0-setup.R'))\n}\n\n# opens the book from the OS\nopenBook <- function(){\n    file.path('C:','Users','JDKS','Applications','Github',\n              '2013 - An Introduction to Analysis of Financial Data with R - Tsay.pdf') %>% \n    shell.exec()    \n}\n\n# opens the root folder in the OS\nopenPath <- function(){\n    getwd() %>%\n    shell.exec()\n}\n\n# opens a chapter's script\nopenScript <- function(chapter = 0){\n    scripts <- c('0-setup.R',list.files('scripts/','Rscripts',full.names = TRUE))\n    \n    if(chapter+1 > length(scripts)){\n        stop(\"There aren't that many chapters in the book\")\n    }\n    \n    scripts[chapter+1] %>%\n    str_c(getwd(),'/',.) %>%\n    shell.exec()\n}\n\n\n\n\n\n\n\n\n\n\n\n",
+    "created" : 1484678382121.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "776877612",
+    "id" : "67B41947",
+    "lastKnownWriteTime" : 1484757885,
+    "last_content_update" : 1484757885543,
+    "path" : "C:/Users/JDKS/Applications/Github/Tsay-An-Introduction-to-Analysis-of-Financial-Data-With-R/scripts/0-setup.R",
+    "project_path" : "scripts/0-setup.R",
+    "properties" : {
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "kDir <- file.path('J:','USERS','JDKS','Tasks','2017-01-13 RAJ Skylines Request')\n\nup1 <- fread(file.path(kDir,'uploadFile.csv'))\nup2 <- fread(file.path(kDir,'uploadFile2.csv'))\n\nrbind(up1,up2)[,unique(Portfolio)]\n\n\nfread(\"J:\\\\USERS\\\\JDKS\\\\Tasks\\\\2016-12-15 PAW Index Request\\\\Region.csv\")[,unique(Portfolio)]\n",
+    "created" : 1484758470218.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "3649922061",
+    "id" : "C8ACB9FA",
+    "lastKnownWriteTime" : 7237128970599738734,
+    "last_content_update" : 1484766741152,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

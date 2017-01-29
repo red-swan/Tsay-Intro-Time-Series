@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\"ohlc_plot\" <- function(datamat,title=\"Time\",xl=\"\",yl=\"\"){\n# Produce plot for daily stock prices: open, high, low, and close. (in order)\n# datamat is the data matrix.\n# This function was downloaded from Jussi Klemela's book web page and \n# modified. \n#\nif(!is.matrix(datamat))da=as.matrix(datamat)\n\ndendat<-datamat[,4]\nlow<-datamat[,3]\nhigh<-datamat[,2]\nopen<-datamat[,1]\naika<-seq(1:length(dendat))\n\nxmin<-1         \nxmax<-length(dendat)\nymin<-min(low)\nymax<-max(high)\n\n# frame\n  plot(x=\"\",y=\"\",type=\"n\",ylim=c(ymin,ymax),xlab=xl,ylab=yl,xlim=c(xmin,xmax),\n       xaxt='n')\n  minnu<-1\n  vecpit<-minnu/3\n  x0<-aika-vecpit\n  y0<-open\n  x1<-aika\n  y1<-open\n  segments(x0,y0,x1,y1)\n  x0<-aika+vecpit\n  y0<-dendat\n  x1<-aika\n  y1<-dendat\n  segments(x0,y0,x1,y1)\n  x0<-aika\n  y0<-low\n  x1<-aika\n  y1<-high\n  segments(x0,y0,x1,y1)\n title(main=title)\n}",
+    "created" : 1484625436617.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1187682814",
+    "id" : "BD354C6",
+    "lastKnownWriteTime" : 1484622657,
+    "last_content_update" : 1484622657,
+    "path" : "C:/Users/JDKS/Applications/Github/Tsay-An-Introduction-to-Analysis-of-Financial-Data-With-R/scripts/1-ohlc.R",
+    "project_path" : "scripts/1-ohlc.R",
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
